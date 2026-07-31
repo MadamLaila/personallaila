@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laila Binti Musa C.A (M) | Hub Akademik & Blog Perakaunan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FCF9EE',
+                            100: '#F7F0D5',
+                            200: '#EEE1A9',
+                            300: '#E4CF7C',
+                            400: '#DAB850',
+                            500: '#D4AF37', /* Primary Gold */
+                            600: '#AA8826',
+                            700: '#80621A',
+                            800: '#564010',
+                            900: '#2E2106',
+                        },
+                        dark: {
+                            bg: '#0A0A0C',
+                            card: '#131418',
+                            surface: '#1A1C23',
+                            border: '#2A2D37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A0A0C;
+            color: #E2E8F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gold Metallic Border */
+        .border-gold-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+        }
+
+        .border-gold-glow:hover {
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Glassmorphism Dark Card */
+        .glass-card {
+            background: rgba(19, 20, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        /* Gold Shimmer Button Effect */
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+            color: #0A0A0C;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2D37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Subtle Grid Pattern */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-300 via-gold-500 to-gold-700 flex items-center justify-center font-serif font-black text-dark-bg text-xl shadow-lg group-hover:scale-105 transition-transform">
+                        LM
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-lg sm:text-xl tracking-wide text-gold-gradient block">LAILA MUSA</span>
+                        <span class="text-xs text-amber-200/70 tracking-widest uppercase block -mt-1">C.A (M) • Pensyarah Kanan</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#profil" class="text-gray-300 hover:text-gold-400 transition-colors">Profil & Sijil</a>
+                    <a href="#kerjaya" class="text-gray-300 hover:text-gold-400 transition-colors">Kerjaya</a>
+                    <a href="#penerbitan" class="text-gray-300 hover:text-gold-400 transition-colors">Penerbitan</a>
+                    <a href="#subjek" class="text-gray-300 hover:text-gold-400 transition-colors">Subjek & Modul</a>
+                    <a href="#hub-interaktif" class="text-gray-300 hover:text-gold-400 transition-colors">Hub Interaktif</a>
+                    <a href="#blog" class="text-gray-300 hover:text-gold-400 transition-colors">Blog</a>
+                    <a href="#hubungi" class="btn-gold px-4 py-2 rounded-lg text-xs uppercase tracking-wider">Hubungi</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gold-400 p-2 focus:outline-none" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-gold-500/30 px-4 pt-2 pb-6 space-y-3">
+            <a href="#profil" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Profil & Sijil</a>
+            <a href="#kerjaya" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Kerjaya</a>
+            <a href="#penerbitan" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Penerbitan & Buku</a>
+            <a href="#subjek" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Subjek & Modul</a>
+            <a href="#hub-interaktif" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Hub Interaktif Pelajar</a>
+            <a href="#blog" class="block py-2 text-gray-300 hover:text-gold-400 font-medium">Blog Akademik</a>
+            <a href="#hubungi" class="block text-center btn-gold px-4 py-2.5 rounded-lg text-sm mt-2">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="home" class="relative py-16 sm:py-24 overflow-hidden border-b border-gold-500/10">
+            <!-- Glowing Gold Blur Accents -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/30 px-4 py-1.5 rounded-full text-gold-400 text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-award text-gold-400"></i>
+                            <span>Ahli Malaysian Institute of Accountants (MIA CA 30985)</span>
+                        </div>
+
+                        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Memperkasa Pendidikan <br>
+                            <span class="text-gold-gradient">Perakaunan & TVET</span> <br>
+                            Selama 20+ Tahun
+                        </h1>
+
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Selamat datang ke Hub Personal & Blog Akademik <strong class="text-gold-300">Puan Laila Binti Musa</strong>. Seorang pensyarah kanan berpengalaman di Politeknik Tuanku Syed Sirajuddin, Perlis, berdedikasi tinggi dalam melahirkan modal insan perakaunan berkaliber tinggi.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#penerbitan" class="btn-gold px-6 py-3.5 rounded-xl flex items-center space-x-2 text-sm">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Lihat Penerbitan & Buku</span>
+                            </a>
+                            <a href="#hub-interaktif" class="glass-card hover:bg-gold-500/10 text-gold-400 border border-gold-500/40 px-6 py-3.5 rounded-xl flex items-center space-x-2 text-sm font-semibold transition">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Kalkulator & Kuiz Interaktif</span>
+                            </a>
+                        </div>
+
+                        <!-- Key Achievements Stats -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-gold-500/20 text-center lg:text-left">
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-serif">20+</p>
+                                <p class="text-xs text-gray-400">Tahun Pengalaman</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-serif">9+</p>
+                                <p class="text-xs text-gray-400">Penerbitan & Buku</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-serif">4</p>
+                                <p class="text-xs text-gray-400">Kampus Politeknik/Kolej</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-serif">3</p>
+                                <p class="text-xs text-gray-400">Sijil Perisian Profesional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Profile Visual Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <!-- Golden Frame Accent -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-gold-400 via-amber-600 to-gold-600 rounded-2xl blur opacity-30"></div>
+                            
+                            <div class="relative glass-card rounded-2xl p-6 sm:p-8 space-y-6 text-center border-gold-glow">
+                                <!-- Profile Avatar Placeholder with Initials -->
+                                <div class="relative w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-gold-600 via-amber-200 to-gold-400 p-1 shadow-2xl">
+                                    <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center border-2 border-dark-card">
+                                        <i class="fa-solid fa-user-tie text-5xl text-gold-400"></i>
+                                    </div>
+                                    <span class="absolute bottom-1 right-1 bg-emerald-500 text-dark-bg font-bold text-xs p-1.5 rounded-full border-2 border-dark-bg" title="Aktif Berkhidmat">
+                                        <i class="fa-solid fa-check"></i>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <h2 class="font-serif text-2xl font-bold text-white">LAILA BINTI MUSA</h2>
+                                    <p class="text-xs text-gold-400 uppercase tracking-widest font-semibold mt-1">C.A (M) • Master of Accounting</p>
+                                    <p class="text-xs text-gray-400 mt-2">Pensyarah Kanan Perakaunan<br>Politeknik Tuanku Syed Sirajuddin, Perlis</p>
+                                </div>
+
+                                <!-- Contact Quick Badges -->
+                                <div class="bg-dark-surface/80 rounded-xl p-3 text-left text-xs space-y-2 border border-gold-500/20">
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <i class="fa-solid fa-envelope text-gold-400 w-4"></i>
+                                        <span class="truncate">laila@ptss.edu.my</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <i class="fa-solid fa-phone text-gold-400 w-4"></i>
+                                        <span>+6019-2586555</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 text-gray-300">
+                                        <i class="fa-solid fa-location-dot text-gold-400 w-4"></i>
+                                        <span>02400 Arau, Perlis</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button onclick="openModal('resume-modal')" class="w-full py-2.5 bg-gold-500/10 hover:bg-gold-500/20 border border-gold-500/40 text-gold-300 rounded-lg text-xs font-semibold uppercase tracking-wider transition">
+                                        <i class="fa-solid fa-file-pdf mr-2"></i> Ringkasan Profil CV
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil & Kelayakan Section -->
+        <section id="profil" class="py-16 sm:py-20 border-b border-gold-500/10 bg-dark-card/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Kepakaran & Kelayakan</h2>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Latar Belakang Akademik & Sijil</h3>
+                    <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Academic Degrees -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border-gold-glow">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400 text-xl border border-gold-500/30">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-white">Kelayakan Akademik</h4>
+                                <p class="text-xs text-gray-400">Pendidikan Tinggi & Kepakaran</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-sm">
+                            <li class="border-l-2 border-gold-500 pl-4 py-1">
+                                <span class="text-xs text-gold-400 font-bold">2017</span>
+                                <h5 class="font-semibold text-white">Master of Accounting</h5>
+                                <p class="text-xs text-gray-400">Universiti Kebangsaan Malaysia (UKM)</p>
+                            </li>
+                            <li class="border-l-2 border-gold-500/60 pl-4 py-1">
+                                <span class="text-xs text-gold-400 font-bold">2002</span>
+                                <h5 class="font-semibold text-white">Master of Education (Technical)</h5>
+                                <p class="text-xs text-gray-400">Universiti Teknologi Malaysia (UTM)</p>
+                            </li>
+                            <li class="border-l-2 border-gold-500/30 pl-4 py-1">
+                                <span class="text-xs text-gold-400 font-bold">1999</span>
+                                <h5 class="font-semibold text-white">Bachelor in Accounting (Hons)</h5>
+                                <p class="text-xs text-gray-400">Universiti Utara Malaysia (UUM)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Professional Body Membership -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border-gold-glow bg-gradient-to-b from-dark-surface to-dark-card">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400 text-xl border border-gold-500/30">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-white">Badan Profesional</h4>
+                                <p class="text-xs text-gray-400">Keahlian Pengiktirafan Perakaunan</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-bg/80 rounded-xl p-5 border border-gold-500/30 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gold-400 font-bold uppercase tracking-wider">MIA Member</span>
+                                <span class="bg-gold-500/20 text-gold-300 text-[10px] font-bold px-2 py-0.5 rounded border border-gold-500/40">Diiktiraf</span>
+                            </div>
+                            <h5 class="text-lg font-bold text-white">Chartered Accountant (Malaysia)</h5>
+                            <p class="text-xs text-gray-300">Malaysian Institute of Accountants</p>
+                            <div class="pt-2 flex justify-between items-center text-xs text-gray-400 border-t border-gray-800">
+                                <span>No. Ahli:</span>
+                                <span class="font-mono font-bold text-gold-300 text-sm">CA 30985</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h5 class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Kemahiran Utama</h5>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-dark-surface border border-gold-500/30 text-gray-300 px-3 py-1 rounded-full"><i class="fa-solid fa-check text-gold-400 mr-1"></i> Komunikasi & Interpersonal</span>
+                                <span class="bg-dark-surface border border-gold-500/30 text-gray-300 px-3 py-1 rounded-full"><i class="fa-solid fa-check text-gold-400 mr-1"></i> Kepimpinan & Disiplin</span>
+                                <span class="bg-dark-surface border border-gold-500/30 text-gray-300 px-3 py-1 rounded-full"><i class="fa-solid fa-check text-gold-400 mr-1"></i> Pengurusan Masa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Software Certifications -->
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border-gold-glow">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400 text-xl border border-gold-500/30">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-white">Persijilan Perisian</h4>
+                                <p class="text-xs text-gray-400">Sijil Kemahiran Komputer & Akaun</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <!-- Cert 1 -->
+                            <div class="p-3 bg-dark-surface rounded-xl border border-gold-500/20 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-file-excel text-emerald-400 text-xl"></i>
+                                    <div>
+                                        <h5 class="text-xs font-bold text-white">Microsoft Office Specialist</h5>
+                                        <p class="text-[11px] text-gray-400">Office Excel 2016</p>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            </div>
+
+                            <!-- Cert 2 -->
+                            <div class="p-3 bg-dark-surface rounded-xl border border-gold-500/20 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-calculator text-amber-400 text-xl"></i>
+                                    <div>
+                                        <h5 class="text-xs font-bold text-white">AutoCount Computerised</h5>
+                                        <p class="text-[11px] text-gray-400">Accounting System</p>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            </div>
+
+                            <!-- Cert 3 -->
+                            <div class="p-3 bg-dark-surface rounded-xl border border-gold-500/20 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-solid fa-database text-blue-400 text-xl"></i>
+                                    <div>
+                                        <h5 class="text-xs font-bold text-white">Sage UBS Computerised</h5>
+                                        <p class="text-[11px] text-gray-400">Accounting System</p>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Garis Masa Kerjaya Section -->
+        <section id="kerjaya" class="py-16 sm:py-20 border-b border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Perjalanan Profesional</h2>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Pengalaman Kerjaya Pendidikan</h3>
+                    <p class="text-gray-400 text-sm">Komited memberikan pendidikan perakaunan terbaik di pelbagai institusi pengajian tinggi awam & swasta.</p>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold-500 via-amber-700 to-gold-900 sm:-translate-x-1/2"></div>
+
+                    <div class="space-y-8">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+                            <div class="flex items-center justify-start sm:justify-end w-full sm:w-1/2 sm:pr-8 pl-12 sm:pl-0">
+                                <div class="glass-card p-6 rounded-xl border-gold-glow w-full text-left sm:text-right">
+                                    <span class="inline-block bg-gold-500/20 text-gold-300 font-mono font-bold text-xs px-3 py-1 rounded-full mb-2">2017 - Sekini</span>
+                                    <h4 class="font-serif font-bold text-lg text-white">Pensyarah Kanan Perakaunan</h4>
+                                    <p class="text-sm text-gold-400 font-medium">Politeknik Tuanku Syed Sirajuddin (PTSS)</p>
+                                    <p class="text-xs text-gray-400 mt-2">Arau, Perlis. Mengajar Perakaunan Kewangan, Aplikasi Komputer Perakaunan & menyelia program kokurikulum.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gold-500 border-4 border-dark-bg flex items-center justify-center shadow-lg">
+                                <div class="w-2 h-2 rounded-full bg-dark-bg"></div>
+                            </div>
+                            <div class="hidden sm:block w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+                            <div class="hidden sm:block w-1/2 pr-8"></div>
+                            <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gold-500/80 border-4 border-dark-bg flex items-center justify-center shadow-lg">
+                                <div class="w-2 h-2 rounded-full bg-dark-bg"></div>
+                            </div>
+                            <div class="flex items-center justify-start w-full sm:w-1/2 sm:pl-8 pl-12">
+                                <div class="glass-card p-6 rounded-xl border-gold-glow w-full text-left">
+                                    <span class="inline-block bg-gold-500/20 text-gold-300 font-mono font-bold text-xs px-3 py-1 rounded-full mb-2">2012 - 2017</span>
+                                    <h4 class="font-serif font-bold text-lg text-white">Pensyarah Kanan</h4>
+                                    <p class="text-sm text-gold-400 font-medium">Politeknik Mukah, Sarawak</p>
+                                    <p class="text-xs text-gray-400 mt-2">Menyampaikan kuliah perakaunan, aktif dalam penyelidikan TVET dan membimbing komuniti akademik Sarawak.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+                            <div class="flex items-center justify-start sm:justify-end w-full sm:w-1/2 sm:pr-8 pl-12 sm:pl-0">
+                                <div class="glass-card p-6 rounded-xl border-gold-glow w-full text-left sm:text-right">
+                                    <span class="inline-block bg-gold-500/20 text-gold-300 font-mono font-bold text-xs px-3 py-1 rounded-full mb-2">2002 - 2012</span>
+                                    <h4 class="font-serif font-bold text-lg text-white">Pensyarah Perakaunan</h4>
+                                    <p class="text-sm text-gold-400 font-medium">Politeknik Merlimau, Melaka</p>
+                                    <p class="text-xs text-gray-400 mt-2">Berkhidmat selama 10 tahun mendidik diploma perakaunan serta memimpin pelbagai portfolio kurikulum.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gold-500/60 border-4 border-dark-bg flex items-center justify-center shadow-lg">
+                                <div class="w-2 h-2 rounded-full bg-dark-bg"></div>
+                            </div>
+                            <div class="hidden sm:block w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="relative flex flex-col sm:flex-row items-start sm:items-center">
+                            <div class="hidden sm:block w-1/2 pr-8"></div>
+                            <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gold-500/40 border-4 border-dark-bg flex items-center justify-center shadow-lg">
+                                <div class="w-2 h-2 rounded-full bg-dark-bg"></div>
+                            </div>
+                            <div class="flex items-center justify-start w-full sm:w-1/2 sm:pl-8 pl-12">
+                                <div class="glass-card p-6 rounded-xl border-gold-glow w-full text-left">
+                                    <span class="inline-block bg-gold-500/20 text-gold-300 font-mono font-bold text-xs px-3 py-1 rounded-full mb-2">2000 - 2001</span>
+                                    <h4 class="font-serif font-bold text-lg text-white">Pensyarah Akademik</h4>
+                                    <p class="text-sm text-gold-400 font-medium">Kolej Legenda, Langkawi</p>
+                                    <p class="text-xs text-gray-400 mt-2">Awal penglibatan kerjaya dalam bidang pengajian tinggi perakaunan dan pendidikan teknikal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Penulisan & Penerbitan Section -->
+        <section id="penerbitan" class="py-16 sm:py-20 border-b border-gold-500/10 bg-dark-card/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div class="space-y-3 max-w-2xl">
+                        <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Karya & Penyelidikan</h2>
+                        <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Penerbitan Akademik & Buku Panduan</h3>
+                        <p class="text-gray-400 text-sm">Koleksi penyelidikan impak, modul latihan, serta buku rujukan perakaunan yang dikeluarkan dari tahun 2017 - 2021.</p>
+                    </div>
+
+                    <!-- Search & Filter Controls -->
+                    <div class="mt-6 md:mt-0 flex flex-col sm:flex-row gap-3">
+                        <div class="relative">
+                            <input type="text" id="pub-search" oninput="filterPublications()" placeholder="Cari tajuk / tahun..." class="bg-dark-surface border border-gold-500/30 text-white text-xs rounded-xl px-4 py-2.5 pl-10 focus:outline-none focus:border-gold-400 w-full sm:w-56">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-500 text-xs"></i>
+                        </div>
+                        <select id="pub-category" onchange="filterPublications()" class="bg-dark-surface border border-gold-500/30 text-gold-300 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-gold-400">
+                            <option value="all">Semua Kategori</option>
+                            <option value="buku">Buku & Modul</option>
+                            <option value="kajian">Kertas Penyelidikan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Publications Grid -->
+                <div id="publications-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Item 1 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2021" data-title="the readiness of online distance learning during covid-19 pandemic among students">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2021</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-newspaper mr-1"></i> Penyelidikan ODL</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">The Readiness of Online Distance Learning During COVID-19 Pandemic Among Students</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Kajian komprehensif mengenai tahap kesediaan pelajar politeknik terhadap pembelajaran dalam talian semasa pandemik COVID-19.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-graduation-cap mr-1"></i> TVET / ODL</span>
+                            <button onclick="viewPubDetail('The Readiness of Online Distance Learning During COVID-19 Pandemic Among Students', '2021', 'Kajian mengenai tahap ketersediaan teknologi, akses internet dan motivasi kendiri pelajar perakaunan politeknik semasa fasa Perintah Kawalan Pergerakan (PKP).')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="buku" data-year="2021" data-title="financial statement for beginners">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2021</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-book mr-1"></i> Buku Panduan</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">Financial Statement for Beginners</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Buku panduan asas penyediaan Penyata Kewangan berstruktur khas untuk pelajar semester awal perakaunan.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-book-bookmark mr-1"></i> Buku Rujukan</span>
+                            <button onclick="viewPubDetail('Financial Statement for Beginners', '2021', 'Panduan terperinci merangkumi Penyata Pendapatan, Penyata Kedudukan Kewangan, Pelarasan Tarikh Imbangan, dan aliran tunai secara sistematik.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2020" data-title="the relationship of career development salary and benefit and employer reputation towards job selection">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2020</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-chart-line mr-1"></i> Penyelidikan Kerjaya</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">The Relationship of Career Development, Salary and Benefit, and Employer Reputation Towards Job Selection Among Northern Polytechnic Accounting Students</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Analisis faktor pemeliharaan kerjaya dan gaji dalam pemulihan pemilihan kerja pelajar perakaunan zon utara.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-users mr-1"></i> Kerjaya Pelajar</span>
+                            <button onclick="viewPubDetail('The Relationship of Career Development, Salary and Benefit, and Employer Reputation...', '2020', 'Kajian empirikal terhadap 300+ responden pelajar perakaunan Politeknik Zon Utara mengenai keutamaan kerjaya dan imbuhan.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="buku" data-year="2019" data-title="easy reference fundamentals of accounting">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2019</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-book mr-1"></i> Buku Panduan</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">Easy Reference: Fundamentals of Accounting</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Buku rujukan ringkas & padat mengandungi formula, catatan berberegu, serta format penyata perakaunan.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-bookmark mr-1"></i> Modul Pengajaran</span>
+                            <button onclick="viewPubDetail('Easy Reference: Fundamentals of Accounting', '2019', 'Rujukan poket untuk pemahaman pantas konsep debit/kredit, jurnal am, lejar, dan imbangan duga.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="buku" data-year="2019" data-title="self-exercise fundamentals of accounting">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2019</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-pen-to-square mr-1"></i> Modul Latihan</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">Self-Exercise: Fundamentals of Accounting</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Koleksi latihan kendiri dan soalan latih tubi pelbagai aras untuk menguji penguasaan asas akaun pelajar.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-tasks mr-1"></i> Latih Tubi</span>
+                            <button onclick="viewPubDetail('Self-Exercise: Fundamentals of Accounting', '2019', 'Mengandungi lebih 100 set soalan latihan beserta panduan langkah demi langkah penyelesaian.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2018" data-title="innate factors the importance on earnings quality in malaysia">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2018</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-file-contract mr-1"></i> Jurnal Perakaunan</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">Innate Factors: The Importance on Earnings Quality in Malaysia</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Penyelidikan mengenai pengaruh faktor dalaman syarikat terhadap kualiti perolehan penyata kewangan di Malaysia.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-magnifying-glass-chart mr-1"></i> Kualiti Penyata</span>
+                            <button onclick="viewPubDetail('Innate Factors: The Importance on Earnings Quality in Malaysia', '2018', 'Menganalisis volatility, saiz syarikat, dan kitaran operasi dalam menentukan kualiti pendapatan pelaporan kewangan.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2018" data-title="the awareness level of green practices amongst academic staff">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2018</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-leaf mr-1"></i> Amalan Hijau</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">The Awareness Level of Green Practices Amongst Academic Staff</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Kajian tahap kesedaran amalan kelestarian dan kelestarian hijau dalam kalangan pensyarah institusi TVET.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-seedling mr-1"></i> Kelestarian TVET</span>
+                            <button onclick="viewPubDetail('The Awareness Level of Green Practices Amongst Academic Staff', '2018', 'Kajian perintis mengukur pembudayaan kampus hijau dan pengurangan penggunaan kertas di politeknik.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2017" data-title="the awareness of online business using amongst technical and vocational education tvet students">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2017</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-store mr-1"></i> Keusahawanan</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">The Awareness of Online Business Using Amongst TVET Students</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Tinjauan kecenderungan pelajar pengajian teknikal dan vokasional dalam mengendalikan perniagaan e-dagang digital.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-globe mr-1"></i> E-Dagang</span>
+                            <button onclick="viewPubDetail('The Awareness of Online Business Using Amongst TVET Students', '2017', 'Kajian mengenai kemahiran digital, pemodelan akaun perniagaan atas talian dan platform e-dagang pelajar TVET.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item 9 -->
+                    <div class="pub-card glass-card rounded-2xl p-6 space-y-4 border-gold-glow flex flex-col justify-between" data-category="kajian" data-year="2017" data-title="the influence of innate factors on earnings quality in malaysia before and after global financial crisis">
+                        <div>
+                            <div class="flex items-center justify-between text-xs mb-3">
+                                <span class="bg-gold-500/20 text-gold-300 font-bold px-2.5 py-1 rounded-md">2017</span>
+                                <span class="text-gray-400 uppercase font-semibold text-[10px]"><i class="fa-solid fa-scale-balanced mr-1"></i> Kajian Ekonomi</span>
+                            </div>
+                            <h4 class="font-serif font-bold text-base text-white leading-snug hover:text-gold-300 transition-colors">The Influence of Innate Factors on Earnings Quality: Before & After Global Financial Crisis</h4>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-3">Kajian perbandingan impak krisis kewangan global terhadap kualiti pelaporan penyata kewangan korporat Malaysia.</p>
+                        </div>
+                        <div class="pt-4 border-t border-gold-500/10 flex justify-between items-center text-xs">
+                            <span class="text-gold-400 font-medium"><i class="fa-solid fa-building-columns mr-1"></i> Kewangan Korporat</span>
+                            <button onclick="viewPubDetail('The Influence of Innate Factors on Earnings Quality...', '2017', 'Analisis komparatif kualiti perolehan sebelum dan selepas krisis kewangan global 2008 bagi syarikat tersenarai di Bursa Malaysia.')" class="text-gold-400 hover:underline text-xs">Info Lanjut <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Subjek & Modul Pengajaran Section -->
+        <section id="subjek" class="py-16 sm:py-20 border-b border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Bidang Pengajaran</h2>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Kursus Utama Yang Diajar</h3>
+                    <p class="text-gray-400 text-sm">Modul pengajaran direka berteraskan sukatan pelajaran terkini politeknik Malaysia dan kehendak industri perakaunan.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Course 1 -->
+                    <div class="glass-card rounded-2xl p-8 space-y-6 border-gold-glow flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 text-dark-bg flex items-center justify-center text-2xl font-bold shadow-lg">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-xl text-white">Financial Accounting</h4>
+                            <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider">Perakaunan Kewangan</p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Membimbing pelajar memahami proses penyediaan Penyata Kedudukan Kewangan, Pelarasan Akaun, Catatan Berberegu, serta Imbangan Duga secara komprehensif.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-gold-500/20">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-solid fa-layer-group text-gold-400 mr-1"></i> Asas & Pertengahan</span>
+                                <span><i class="fa-solid fa-clock text-gold-400 mr-1"></i> Modul Kuliah</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="glass-card rounded-2xl p-8 space-y-6 border-gold-glow flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 text-dark-bg flex items-center justify-center text-2xl font-bold shadow-lg">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-xl text-white">Computer Application in Accounting</h4>
+                            <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider">Aplikasi Komputer Perakaunan</p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Latihan praktikal penggunaan perisian komputer terkemuka seperti **Microsoft Excel Advanced**, **AutoCount Accounting**, dan **Sage UBS** untuk pengurusan lejar digital.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-gold-500/20">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-solid fa-code text-gold-400 mr-1"></i> Makmal Komputer</span>
+                                <span><i class="fa-solid fa-certificate text-gold-400 mr-1"></i> Amali Digital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="glass-card rounded-2xl p-8 space-y-6 border-gold-glow flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 text-dark-bg flex items-center justify-center text-2xl font-bold shadow-lg">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-xl text-white">Co-curricular</h4>
+                            <p class="text-xs text-gold-400 font-semibold uppercase tracking-wider">Aktiviti Kokurikulum</p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Membina sahsiah, disiplin, semangat kerja berpasukan dan kepimpinan pelajar melalui aktiviti berorganisasi dan kemesyarakatan di Politeknik.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-gold-500/20">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-solid fa-heart text-gold-400 mr-1"></i> Soft-Skills</span>
+                                <span><i class="fa-solid fa-star text-gold-400 mr-1"></i> Pembangunan Diri</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Hub Interaktif Pelajar (Calculators & Quiz) -->
+        <section id="hub-interaktif" class="py-16 sm:py-20 border-b border-gold-500/10 bg-dark-card/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="bg-gold-500/20 text-gold-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-gold-500/30">Ciri Pembelajaran Interaktif</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Hub Alat Kewangan & Kuiz Perakaunan</h3>
+                    <p class="text-gray-400 text-sm">Gunakan kalkulator nisbah kewangan di bawah atau uji kefahaman anda dalam Kuiz Perakaunan Ringkas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left: Interactive Financial Ratio Calculator -->
+                    <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 space-y-6 border-gold-glow">
+                        <div class="flex items-center space-x-3 border-b border-gold-500/20 pb-4">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-white">Kalkulator Nisbah Kewangan</h4>
+                                <p class="text-xs text-gray-400">Uji pengiraan Nisbah Semasa & Marjin Untung</p>
+                            </div>
+                        </div>
+
+                        <!-- Ratio Select -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 mb-1">Pilih Jenis Nisbah Kewangan:</label>
+                            <select id="calc-ratio-type" onchange="updateCalcFields()" class="w-full bg-dark-surface border border-gold-500/30 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                                <option value="current">Nisbah Semasa (Current Ratio)</option>
+                                <option value="netprofit">Marjin Untung Bersih (Net Profit Margin %)</option>
+                                <option value="roe">Pulangan Atas Ekuiti (Return on Equity %)</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Inputs -->
+                        <div id="calc-inputs" class="space-y-4">
+                            <div>
+                                <label id="label-val1" class="block text-xs text-gray-300 mb-1">Aset Semasa (RM):</label>
+                                <input type="number" id="input-val1" placeholder="Contoh: 150000" class="w-full bg-dark-surface border border-gold-500/30 text-white text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                            </div>
+                            <div>
+                                <label id="label-val2" class="block text-xs text-gray-300 mb-1">Liabiliti Semasa (RM):</label>
+                                <input type="number" id="input-val2" placeholder="Contoh: 75000" class="w-full bg-dark-surface border border-gold-500/30 text-white text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                            </div>
+                        </div>
+
+                        <button onclick="calculateRatio()" class="w-full btn-gold py-3 rounded-xl text-xs uppercase tracking-wider font-bold">
+                            <i class="fa-solid fa-equals mr-2"></i> Kira Nisbah Sekarang
+                        </button>
+
+                        <!-- Result Display Box -->
+                        <div id="calc-result" class="hidden p-4 rounded-xl bg-dark-surface border border-gold-500/40 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Hasil Pengiraan:</span>
+                                <span id="result-value" class="text-xl font-bold font-mono text-gold-gradient">0.00</span>
+                            </div>
+                            <p id="result-desc" class="text-xs text-gray-300 leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quick Accounting & Software Quiz -->
+                    <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 space-y-6 border-gold-glow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 border-b border-gold-500/20 pb-4 mb-6">
+                                <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-white">Kuiz Perakaunan & Perisian</h4>
+                                    <p class="text-xs text-gray-400">Soalan pantas menguji kefahaman anda</p>
+                                </div>
+                            </div>
+
+                            <div id="quiz-container" class="space-y-4">
+                                <div class="flex items-center justify-between text-xs text-gold-400">
+                                    <span id="quiz-progress">Soalan 1 daripada 3</span>
+                                    <span id="quiz-score" class="font-bold">Skor: 0</span>
+                                </div>
+
+                                <p id="quiz-question" class="text-sm font-semibold text-white leading-relaxed">
+                                    Memuatkan soalan kuiz...
+                                </p>
+
+                                <div id="quiz-options" class="space-y-2 pt-2">
+                                    <!-- Options rendered via JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="quiz-actions" class="pt-4 border-t border-gold-500/20 flex justify-between items-center">
+                            <button onclick="restartQuiz()" class="text-xs text-gray-400 hover:text-gold-300 transition">
+                                <i class="fa-solid fa-rotate-right mr-1"></i> Mula Semula
+                            </button>
+                            <span class="text-[11px] text-gray-500">Khas untuk Pelajar PTSS & Awam</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Blog Akademik Section -->
+        <section id="blog" class="py-16 sm:py-20 border-b border-gold-500/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Artikel & Perkongsian</h2>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Blog Perakaunan & Tips Pembelajaran</h3>
+                    <p class="text-gray-400 text-sm">Perkongsian pengalaman pensyarah, tips kuasai perisian AutoCount/Excel, dan panduan akademik TVET.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Blog Card 1 -->
+                    <article class="glass-card rounded-2xl overflow-hidden border-gold-glow flex flex-col justify-between group">
+                        <div>
+                            <div class="h-44 bg-gradient-to-tr from-dark-surface via-amber-950 to-gold-900 flex items-center justify-center relative p-6">
+                                <i class="fa-solid fa-file-excel text-6xl text-gold-400/40 group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute top-4 left-4 bg-gold-500/20 text-gold-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-gold-500/30">Tips Microsoft Excel</span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="text-[11px] text-gray-400 flex items-center space-x-2">
+                                    <i class="fa-regular fa-calendar text-gold-400"></i>
+                                    <span>12 Jun 2024</span>
+                                    <span>•</span>
+                                    <i class="fa-regular fa-clock text-gold-400"></i>
+                                    <span>4 Minit Bacaan</span>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-white group-hover:text-gold-300 transition-colors">5 Formula Excel Wajib Dikuasai Pelajar Perakaunan</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed line-clamp-3">
+                                    Penggunaan VLOOKUP, INDEX/MATCH, SUMIFS, serta Pivot Table dalam mempercepatkan penyediaan imbangan duga dan penyata kewangan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('5 Formula Excel Wajib Dikuasai Pelajar Perakaunan', 'Formula Excel seperti VLOOKUP, INDEX/MATCH, SUMIFS, dan Pivot Table membolehkan akauntan mengurus ribuan transaksi dalam hitungan saat. Dalam artikel ini, kita akan melihat contoh praktikal penyediaan Imbangan Duga secara automatik.')" class="w-full py-2.5 bg-dark-surface hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 rounded-xl text-xs font-semibold transition flex items-center justify-center space-x-2">
+                                <span>Baca Artikel Penuh</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="glass-card rounded-2xl overflow-hidden border-gold-glow flex flex-col justify-between group">
+                        <div>
+                            <div class="h-44 bg-gradient-to-tr from-dark-surface via-yellow-950 to-gold-900 flex items-center justify-center relative p-6">
+                                <i class="fa-solid fa-building-columns text-6xl text-gold-400/40 group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute top-4 left-4 bg-gold-500/20 text-gold-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-gold-500/30">Pengajian TVET</span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="text-[11px] text-gray-400 flex items-center space-x-2">
+                                    <i class="fa-regular fa-calendar text-gold-400"></i>
+                                    <span>28 Mac 2024</span>
+                                    <span>•</span>
+                                    <i class="fa-regular fa-clock text-gold-400"></i>
+                                    <span>6 Minit Bacaan</span>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-white group-hover:text-gold-300 transition-colors">Persiapan Menghadapi Latihan Industri Akaun</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed line-clamp-3">
+                                    Panduan praktikal buat pelajar diploma perakaunan politeknik sebelum melangkah ke firma audit, perakaunan korporat atau agensi kerajaan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('Persiapan Menghadapi Latihan Industri Akaun', 'Latihan Industri (LI) adalah medan sebenar membuktikan kebolehan anda. Pastikan anda mahir mengendalikan perisian perakaunan seperti AutoCount atau Sage UBS, mematuhi etika kebolehan simpan rahsia syarikat, dan berkomunikasi dengan berkesan.')" class="w-full py-2.5 bg-dark-surface hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 rounded-xl text-xs font-semibold transition flex items-center justify-center space-x-2">
+                                <span>Baca Artikel Penuh</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="glass-card rounded-2xl overflow-hidden border-gold-glow flex flex-col justify-between group">
+                        <div>
+                            <div class="h-44 bg-gradient-to-tr from-dark-surface via-amber-900 to-gold-900 flex items-center justify-center relative p-6">
+                                <i class="fa-solid fa-chart-line text-6xl text-gold-400/40 group-hover:scale-110 transition-transform"></i>
+                                <span class="absolute top-4 left-4 bg-gold-500/20 text-gold-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-gold-500/30">Kerjaya C.A (M)</span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div class="text-[11px] text-gray-400 flex items-center space-x-2">
+                                    <i class="fa-regular fa-calendar text-gold-400"></i>
+                                    <span>15 Januari 2024</span>
+                                    <span>•</span>
+                                    <i class="fa-regular fa-clock text-gold-400"></i>
+                                    <span>5 Minit Bacaan</span>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-white group-hover:text-gold-300 transition-colors">Langkah Menjadi Akauntan Bertauliah MIA</h4>
+                                <p class="text-xs text-gray-400 leading-relaxed line-clamp-3">
+                                    Bagaimanakah laluan graduatan perakaunan daripada peringkat Ijazah Sarjana Muda sehingga mendapat pengiktirafan Chartered Accountant (MIA).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('Langkah Menjadi Akauntan Bertauliah MIA', 'Menjadi ahli Malaysian Institute of Accountants (MIA) membuka pintu kerjaya yang amat luas. Syarat utamanya merangkumi kelayakan akademik diiktiraf serta pengalaman kerja praktikal dalam bidang perakaunan sekurang-kurangnya 3 tahun.')" class="w-full py-2.5 bg-dark-surface hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 rounded-xl text-xs font-semibold transition flex items-center justify-center space-x-2">
+                                <span>Baca Artikel Penuh</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Hubungi & Lokasi Section -->
+        <section id="hubungi" class="py-16 sm:py-20 border-b border-gold-500/10 bg-dark-card/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left: Contact Details -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="space-y-3">
+                            <h2 class="text-gold-400 uppercase text-xs tracking-widest font-extrabold">Hubungi & Kolaborasi</h2>
+                            <h3 class="font-serif text-3xl sm:text-4xl font-extrabold text-white">Mari Berhubung</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Terbuka untuk jemputan ceramah perakaunan, kolaborasi penyelidikan TVET, pertanyaan akademik pelajar, atau konsultasi perisian perakaunan.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="glass-card p-4 rounded-xl border-gold-glow flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs text-gray-400 uppercase tracking-wider">Jabatan / Institusi</h5>
+                                    <p class="text-sm font-semibold text-white">Politeknik Tuanku Syed Sirajuddin</p>
+                                    <p class="text-xs text-gray-400">02400 Arau, Perlis, Malaysia</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-4 rounded-xl border-gold-glow flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs text-gray-400 uppercase tracking-wider">E-mel Rasmi</h5>
+                                    <a href="mailto:laila@ptss.edu.my" class="text-sm font-semibold text-gold-300 hover:underline">laila@ptss.edu.my</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-4 rounded-xl border-gold-glow flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs text-gray-400 uppercase tracking-wider">Telefon Hubungan</h5>
+                                    <a href="tel:+60192586555" class="text-sm font-semibold text-gold-300 hover:underline">+6019-2586555</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Message Form -->
+                    <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border-gold-glow space-y-6">
+                        <h4 class="font-serif font-bold text-xl text-white border-b border-gold-500/20 pb-3">Hantar Mesej / Pertanyaan</h4>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-300 mb-1">Nama Penuh <span class="text-gold-400">*</span></label>
+                                    <input type="text" required placeholder="Nama anda" class="w-full bg-dark-surface border border-gold-500/30 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-300 mb-1">Alamat E-mel <span class="text-gold-400">*</span></label>
+                                    <input type="email" required placeholder="nama@email.com" class="w-full bg-dark-surface border border-gold-500/30 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Tujuan / Tajuk Mesej</label>
+                                <select class="w-full bg-dark-surface border border-gold-500/30 text-gold-300 text-xs rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                                    <option>Jemputan Ceramah / Bengkel Akaun</option>
+                                    <option>Pertanyaan Pelajar / Pembelajaran</option>
+                                    <option>Kolaborasi Penyelidikan TVET</option>
+                                    <option>Lain-lain Umpaman</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Kandungan Mesej <span class="text-gold-400">*</span></label>
+                                <textarea rows="4" required placeholder="Tuliskan mesej anda di sini..." class="w-full bg-dark-surface border border-gold-500/30 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold-400 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full btn-gold py-3.5 rounded-xl text-xs uppercase tracking-wider font-bold">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Hantar Mesej Sekarang
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Resume Preview Modal -->
+    <div id="resume-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card rounded-2xl max-w-2xl w-full p-6 sm:p-8 border-gold-glow max-h-[90vh] overflow-y-auto space-y-6">
+            <div class="flex justify-between items-center border-b border-gold-500/20 pb-4">
+                <h3 class="font-serif font-bold text-xl text-white">Ringkasan Kurikulum Vitae (CV)</h3>
+                <button onclick="closeModal('resume-modal')" class="text-gray-400 hover:text-gold-400 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs text-gray-300 leading-relaxed">
+                <div class="bg-dark-surface p-4 rounded-xl border border-gold-500/20">
+                    <p class="font-bold text-gold-300 text-sm">LAILA BINTI MUSA C.A (M)</p>
+                    <p class="text-gray-400">Pensyarah Kanan Perakaunan (20+ Tahun Pengalaman)</p>
+                    <p class="mt-1">MIA CA 30985 • Master of Accounting (UKM) • Master of Education (UTM) • B.Acc (UUM)</p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white text-sm mb-1 text-gold-400">Ringkasan Profil</h5>
+                    <p>An experienced, enthusiastic and focused lecturer who is totally committed for more than 20 years in accounting education field.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white text-sm mb-1 text-gold-400">Institusi Berkhidmat</h5>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>2017–Kini: Politeknik Tuanku Syed Sirajuddin, Perlis</li>
+                        <li>2012–2017: Politeknik Mukah, Sarawak</li>
+                        <li>2002–2012: Politeknik Merlimau, Melaka</li>
+                        <li>2000–2001: Kolej Legenda, Langkawi</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white text-sm mb-1 text-gold-400">Sijil Profesional Perisian</h5>
+                    <p>• Microsoft Office Specialist - Office Excel 2016<br>• AutoCount Computerised Accounting<br>• Sage UBS Computerised Accounting</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-gold-500/20 flex justify-end">
+                <button onclick="closeModal('resume-modal')" class="btn-gold px-6 py-2 rounded-xl text-xs">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Info Modal -->
+    <div id="info-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="glass-card rounded-2xl max-w-lg w-full p-6 border-gold-glow space-y-4">
+            <div class="flex justify-between items-center border-b border-gold-500/20 pb-3">
+                <h4 id="info-modal-title" class="font-serif font-bold text-lg text-white"></h4>
+                <button onclick="closeModal('info-modal')" class="text-gray-400 hover:text-gold-400">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <p id="info-modal-body" class="text-xs text-gray-300 leading-relaxed"></p>
+            <div class="pt-3 border-t border-gold-500/20 text-right">
+                <button onclick="closeModal('info-modal')" class="btn-gold px-5 py-2 rounded-lg text-xs">Faham</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-gold-500/20 py-8 text-center text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex justify-center space-x-6 text-gold-400">
+                <a href="#profil" class="hover:underline">Profil</a>
+                <a href="#kerjaya" class="hover:underline">Kerjaya</a>
+                <a href="#penerbitan" class="hover:underline">Penerbitan</a>
+                <a href="#hub-interaktif" class="hover:underline">Hub Interaktif</a>
+                <a href="#hubungi" class="hover:underline">Hubungi</a>
+            </div>
+            <p>© 2026 Laila Binti Musa C.A (M). Hak Cipta Terpelihara • Politeknik Tuanku Syed Sirajuddin, Perlis.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* Mobile Menu Toggle */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        /* Publication Search & Filter Logic */
+        function filterPublications() {
+            const searchVal = document.getElementById('pub-search').value.toLowerCase().trim();
+            const catVal = document.getElementById('pub-category').value;
+            const cards = document.querySelectorAll('.pub-card');
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title');
+                const year = card.getAttribute('data-year');
+
+                const matchesSearch = title.includes(searchVal) || year.includes(searchVal);
+                const matchesCat = (catVal === 'all') || (category === catVal);
+
+                if (matchesSearch && matchesCat) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        /* Modal Functions */
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function viewPubDetail(title, year, summary) {
+            document.getElementById('info-modal-title').innerText = title + ' (' + year + ')';
+            document.getElementById('info-modal-body').innerText = summary;
+            openModal('info-modal');
+        }
+
+        function readBlogModal(title, content) {
+            document.getElementById('info-modal-title').innerText = title;
+            document.getElementById('info-modal-body').innerText = content;
+            openModal('info-modal');
+        }
+
+        /* Contact Form Handler */
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('info-modal-title').innerText = "Mesej Berjaya Dihantar!";
+            document.getElementById('info-modal-body').innerText = "Terima kasih kerana menghubungi Puan Laila Binti Musa. Mesej anda telah diterima dan akan dibalas secepat mungkin melalui e-mel.";
+            openModal('info-modal');
+            document.getElementById('contact-form').reset();
+        }
+
+        /* Financial Ratio Calculator Logic */
+        function updateCalcFields() {
+            const ratioType = document.getElementById('calc-ratio-type').value;
+            const label1 = document.getElementById('label-val1');
+            const label2 = document.getElementById('label-val2');
+            const input1 = document.getElementById('input-val1');
+            const input2 = document.getElementById('input-val2');
+
+            input1.value = '';
+            input2.value = '';
+
+            if (ratioType === 'current') {
+                label1.innerText = 'Aset Semasa (RM):';
+                label2.innerText = 'Liabiliti Semasa (RM):';
+                input1.placeholder = 'Contoh: 150000';
+                input2.placeholder = 'Contoh: 75000';
+            } else if (ratioType === 'netprofit') {
+                label1.innerText = 'Untung Bersih (RM):';
+                label2.innerText = 'Jualan / Hasil Bersih (RM):';
+                input1.placeholder = 'Contoh: 45000';
+                input2.placeholder = 'Contoh: 300000';
+            } else if (ratioType === 'roe') {
+                label1.innerText = 'Untung Bersih Selepas Cukai (RM):';
+                label2.innerText = 'Jumlah Ekuiti Pemilik (RM):';
+                input1.placeholder = 'Contoh: 60000';
+                input2.placeholder = 'Contoh: 400000';
+            }
+        }
+
+        function calculateRatio() {
+            const ratioType = document.getElementById('calc-ratio-type').value;
+            const val1 = parseFloat(document.getElementById('input-val1').value);
+            const val2 = parseFloat(document.getElementById('input-val2').value);
+            const resultBox = document.getElementById('calc-result');
+            const resultVal = document.getElementById('result-value');
+            const resultDesc = document.getElementById('result-desc');
+
+            if (isNaN(val1) || isNaN(val2) || val2 === 0) {
+                resultBox.classList.remove('hidden');
+                resultVal.innerText = "Sila Masukkan Nilai Sah";
+                resultDesc.innerText = "Sila pastikan kedua-dua ruangan nombor diisi dengan betul dan penyebut tidak bernilai 0.";
+                return;
+            }
+
+            resultBox.classList.remove('hidden');
+
+            if (ratioType === 'current') {
+                const ratio = (val1 / val2).toFixed(2);
+                resultVal.innerText = ratio + ' : 1';
+                if (ratio >= 2.0) {
+                    resultDesc.innerText = "Nisbah Kunci Kecairan Sangat Sihat! Syarikat mempunyai RM " + ratio + " aset semasa bagi setiap RM 1 liabiliti semasa.";
+                } else if (ratio >= 1.0) {
+                    resultDesc.innerText = "Nisbah Semasa Sederhana Baik. Syarikat berupaya membayar liabiliti jangka pendek.";
+                } else {
+                    resultDesc.innerText = "Nisbah Kurang Memuaskan (< 1.0). Syarikat berisiko menghadapi kekangan tunai jangka pendek.";
+                }
+            } else if (ratioType === 'netprofit') {
+                const margin = ((val1 / val2) * 100).toFixed(2);
+                resultVal.innerText = margin + ' %';
+                resultDesc.innerText = "Syarikat memperoleh sebanyak RM " + margin + " untung bersih daripada setiap RM 100 jualan yang dihasilkan.";
+            } else if (ratioType === 'roe') {
+                const roe = ((val1 / val2) * 100).toFixed(2);
+                resultVal.innerText = roe + ' %';
+                resultDesc.innerText = "Pulangan Ke Atas Ekuiti (ROE) adalah " + roe + "%. Ini mengukur kecekapan penjanaan untung daripada dana pemegang saham.";
+            }
+        }
+
+        /* Quick Interactive Accounting Quiz Logic */
+        const quizData = [
+            {
+                q: "Manakah antara berikut merupakan Persamaan Perakaunan yang betul?",
+                options: [
+                    "Aset = Liabiliti + Ekuiti Pemilik",
+                    "Aset = Liabiliti - Ekuiti Pemilik",
+                    "Liabiliti = Aset + Ekuiti Pemilik",
+                    "Ekuiti Pemilik = Liabiliti - Aset"
+                ],
+                correct: 0
+            },
+            {
+                q: "Perisian AutoCount dan Sage UBS biasanya digunakan dalam subjek perakaunan politeknik untuk:",
+                options: [
+                    "Pengaturcaraan Web C++",
+                    "Aplikasi Komputer Perakaunan Digital",
+                    "Penyuntingan Video Grafik",
+                    "Perekaan Bangunan CAD"
+                ],
+                correct: 1
+            },
+            {
+                q: "Apakah fungsi utama VLOOKUP dalam Microsoft Excel bagi tugasan akaun?",
+                options: [
+                    "Mencetak penyata kewangan terus ke kertas",
+                    "Mencari dan menarik data tertentu dari jadual rujukan lain",
+                    "Mencipta graf carta bar secara automatik",
+                    "Menghapus akaun terkurang cair"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQIndex = 0;
+        let score = 0;
+
+        function renderQuizQuestion() {
+            const qObj = quizData[currentQIndex];
+            document.getElementById('quiz-progress').innerText = `Soalan ${currentQIndex + 1} daripada ${quizData.length}`;
+            document.getElementById('quiz-score').innerText = `Skor: ${score}`;
+            document.getElementById('quiz-question').innerText = qObj.q;
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            qObj.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3 rounded-xl bg-dark-surface border border-gold-500/20 text-xs text-gray-200 hover:border-gold-400 hover:bg-gold-500/10 transition";
+                btn.innerText = opt;
+                btn.onclick = () => selectAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIdx) {
+            if (selectedIdx === quizData[currentQIndex].correct) {
+                score++;
+            }
+
+            currentQIndex++;
+            if (currentQIndex < quizData.length) {
+                renderQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-progress').innerText = "Kuiz Selesai!";
+            document.getElementById('quiz-score').innerText = `Skor Akhir: ${score} / ${quizData.length}`;
+            
+            let feedback = score === quizData.length 
+                ? "Cemerlang! Anda menguasai asas perakaunan & aplikasi perisian dengan amat baik!" 
+                : "Tahniah atas cubaan anda! Teruskan mengulangkaji modul asas perakaunan.";
+
+            document.getElementById('quiz-question').innerText = feedback;
+            document.getElementById('quiz-options').innerHTML = `
+                <div class="p-4 bg-gold-500/10 border border-gold-500/30 rounded-xl text-center">
+                    <p class="text-sm font-bold text-gold-300">Keputusan: ${score} daripada ${quizData.length} Soalan Betul</p>
+                    <button onclick="restartQuiz()" class="mt-3 btn-gold px-4 py-2 rounded-lg text-xs font-bold">Cuba Lagi</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            currentQIndex = 0;
+            score = 0;
+            renderQuizQuestion();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderQuizQuestion();
+        };
+    </script>
+</body>
+</html>
